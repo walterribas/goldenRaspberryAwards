@@ -1,5 +1,6 @@
 package com.outsera.service;
 
+import com.outsera.dto.AwardInterval;
 import com.outsera.model.Movie;
 import com.outsera.repository.MovieRepository;
 import com.outsera.util.CSVReaderUtil;
@@ -81,21 +82,22 @@ public class MovieService {
             producerMovies.sort(Comparator.comparingInt(Movie::getReleaseYear));
 
             if (producerMovies.size() > 1) {
-                for (int i = 1; i < producerMovies.size(); i++) {
-                    int interval = producerMovies.get(i).getReleaseYear() - producerMovies.get(i - 1).getReleaseYear();
-                    int previousWin = producerMovies.get(i - 1).getReleaseYear();
-                    int followingWin = producerMovies.get(i).getReleaseYear();
-                    String previousWinMovie = producerMovies.get(i - 1).getTitle();
-                    String followingWinMovie = producerMovies.get(i).getTitle();
+                Movie firstMovie = producerMovies.get(0);
+                Movie lastMovie = producerMovies.get(producerMovies.size() - 1);
+                int interval = lastMovie.getReleaseYear() - firstMovie.getReleaseYear();
+                int firstWinDate = firstMovie.getReleaseYear();
+                String firstWinMovie = firstMovie.getTitle();
+                int lastWinDate = lastMovie.getReleaseYear();
+                String lastWinMovie = lastMovie.getTitle();
 
-                    if (minIntervalProducer == null || interval < minIntervalProducer.getInterval()) {
-                        minIntervalProducer = new AwardInterval(producer, interval, previousWin, followingWin, previousWinMovie, followingWinMovie);
-                    }
-
-                    if (maxIntervalProducer == null || interval > maxIntervalProducer.getInterval()) {
-                        maxIntervalProducer = new AwardInterval(producer, interval, previousWin, followingWin, previousWinMovie, followingWinMovie);
-                    }
+                if (minIntervalProducer == null || interval < minIntervalProducer.interval()) {
+                    minIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
                 }
+
+                if (maxIntervalProducer == null || interval > maxIntervalProducer.interval()) {
+                    maxIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                }
+
             }
         }
 
@@ -112,55 +114,6 @@ public class MovieService {
         return Arrays.stream(splitProducers)
                 .map(String::trim)
                 .collect(Collectors.toList());
-    }
-
-
-    // Classe auxiliar para armazenar os intervalos de prêmios
-    public class AwardInterval {
-        private String producer;
-        private int interval;
-        private int previousWin;
-        private int followingWin;
-        private String previousWinMovie;
-        private String followingWinMovie;
-
-        // Construtor atualizado para incluir os novos campos
-        public AwardInterval(String producer, int interval, int previousWin, int followingWin, String previousWinMovie, String followingWinMovie) {
-            this.producer = producer;
-            this.interval = interval;
-            this.previousWin = previousWin;
-            this.followingWin = followingWin;
-            this.previousWinMovie = previousWinMovie;
-            this.followingWinMovie = followingWinMovie;
-        }
-
-        // Getters e Setters para os novos campos
-        public String getPreviousWinMovie() {
-            return previousWinMovie;
-        }
-
-        public String getFollowingWinMovie() {
-            return followingWinMovie;
-        }
-
-        // Outros getters e setters
-        public String getProducer() {
-            return producer;
-        }
-
-        public int getInterval() {
-            return interval;
-        }
-
-        public int getPreviousWin() {
-            return previousWin;
-        }
-
-        public int getFollowingWin() {
-            return followingWin;
-        }
-
-        // Outros métodos, se necessário
     }
 
 }

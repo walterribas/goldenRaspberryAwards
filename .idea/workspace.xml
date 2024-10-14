@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="090e8911-be75-47b8-9c3f-dd75f631e8c0" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/controller/MovieController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/model/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/repository/MovieRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/service/MovieService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/util/CSVReaderUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test1.csv" afterDir="false" />
+    <list default="true" id="090e8911-be75-47b8-9c3f-dd75f631e8c0" name="Changes" comment="fase 1 getProducersWithAwardsInterval">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/dto/AwardInterval.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/outsera/GoldenRaspberryAwardsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outsera/GoldenRaspberryAwardsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/outsera/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outsera/service/MovieService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,11 +111,20 @@
       <option name="project" value="LOCAL" />
       <updated>1728923764818</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fase 1 getProducersWithAwardsInterval">
+      <option name="closed" value="true" />
+      <created>1728937357154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728937357154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="fase 1 getProducersWithAwardsInterval" />
+    <option name="LAST_COMMIT_MESSAGE" value="fase 1 getProducersWithAwardsInterval" />
   </component>
 </project>
