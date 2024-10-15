@@ -87,22 +87,21 @@ public class MovieService {
             producerMovies.sort(Comparator.comparingInt(Movie::getReleaseYear));
 
             if (producerMovies.size() > 1) {
-                Movie firstMovie = producerMovies.get(0);
-                Movie lastMovie = producerMovies.get(producerMovies.size() - 1);
-                int interval = lastMovie.getReleaseYear() - firstMovie.getReleaseYear();
-                int firstWinDate = firstMovie.getReleaseYear();
-                String firstWinMovie = firstMovie.getTitle();
-                int lastWinDate = lastMovie.getReleaseYear();
-                String lastWinMovie = lastMovie.getTitle();
+                for (int i = 1; i < producerMovies.size(); i++) {
+                    int interval = producerMovies.get(i).getReleaseYear() - producerMovies.get(i - 1).getReleaseYear();
+                    int firstWinDate = producerMovies.get(i - 1).getReleaseYear();
+                    String firstWinMovie = producerMovies.get(i - 1).getTitle();
+                    int lastWinDate = producerMovies.get(i).getReleaseYear();
+                    String lastWinMovie = producerMovies.get(i).getTitle();
 
-                if (minIntervalProducer == null || interval < minIntervalProducer.interval()) {
-                    minIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                    if (minIntervalProducer == null || interval < minIntervalProducer.interval()) {
+                        minIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                    }
+
+                    if (maxIntervalProducer == null || interval > maxIntervalProducer.interval()) {
+                        maxIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                    }
                 }
-
-                if (maxIntervalProducer == null || interval > maxIntervalProducer.interval()) {
-                    maxIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
-                }
-
             }
         }
 
