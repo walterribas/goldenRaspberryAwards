@@ -1,5 +1,7 @@
 package com.outsera.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,21 +12,33 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonProperty("year")
     private int releaseYear;
+
     private String title;
     private String studios;
     private String producers;
+
+    @JsonProperty("winner")
     private boolean winner;
 
     public Movie() {}
 
-    public Movie(Long id, int releaseYear, String title, String studios, String producers, boolean winner) {
+    @JsonCreator
+    public Movie(
+            @JsonProperty("id") Long id,
+            @JsonProperty("year") int releaseYear,
+            @JsonProperty("title") String title,
+            @JsonProperty("studios") String studios,
+            @JsonProperty("producers") String producers,
+            @JsonProperty("winner") String winnerString
+    ) {
         this.id = id;
         this.releaseYear = releaseYear;
         this.title = title;
         this.studios = studios;
         this.producers = producers;
-        this.winner = winner;
+        this.setWinnerFromString(winnerString);
     }
 
     public Long getId() {
@@ -73,5 +87,9 @@ public class Movie {
 
     public void setWinner(boolean winner) {
         this.winner = winner;
+    }
+
+    public void setWinnerFromString(String winnerString) {
+        this.winner = "yes".equalsIgnoreCase(winnerString);
     }
 }

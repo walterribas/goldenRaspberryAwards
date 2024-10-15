@@ -25,11 +25,16 @@ public class MovieService {
 
     @PostConstruct
     public void init() {
-        loadMoviesFromCSV();
+        loadAndSaveMoviesFromCSV();
     }
 
     @Transactional
-    public void loadMoviesFromCSV() {
+    public List<Movie> loadMoviesFromCSV() {
+       return csvReaderUtil.readMoviesFromCSV();
+    }
+
+    @Transactional
+    public void loadAndSaveMoviesFromCSV() {
         List<Movie> movies = csvReaderUtil.readMoviesFromCSV();
         movieRepository.saveAll(movies);
     }

@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "03541fd1-154e-4868-8db4-4e17cbd1f0dc",
+		"name": "outsera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14886344"
+	},
+	"item": [
+		{
+			"name": "getAllMovies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProducersWithAwards",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies/producers-interval",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"producers-interval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMovieById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveMovie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Inception\",\r\n    \"year\": 2010,\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Emma Thomas, Christopher Nolan\",\r\n    \"winner\": \"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveMovieBulk",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Can't Stop the Music\",\r\n    \"studios\": \"Associated Film Distribution\",\r\n    \"producers\": \"Allan Carr\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Cruising\",\r\n    \"studios\": \"Lorimar Productions, United Artists\",\r\n    \"producers\": \"Jerry Weintraub\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"The Formula\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Steve Shagan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Friday the 13th\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Sean S. Cunningham\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"The Nude Bomb\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Jennings Lang\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"The Jazz Singer\",\r\n    \"studios\": \"Associated Film Distribution\",\r\n    \"producers\": \"Jerry Leider\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Raise the Titanic\",\r\n    \"studios\": \"Associated Film Distribution\",\r\n    \"producers\": \"William Frye\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Saturn 3\",\r\n    \"studios\": \"Associated Film Distribution\",\r\n    \"producers\": \"Stanley Donen\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Windows\",\r\n    \"studios\": \"United Artists\",\r\n    \"producers\": \"Mike Lobell\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1980,\r\n    \"title\": \"Xanadu\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Lawrence Gordon\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1981,\r\n    \"title\": \"Mommie Dearest\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Frank Yablans\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1981,\r\n    \"title\": \"Endless Love\",\r\n    \"studios\": \"Universal Studios, PolyGram\",\r\n    \"producers\": \"Dyson Lovell\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1981,\r\n    \"title\": \"Heaven's Gate\",\r\n    \"studios\": \"United Artists\",\r\n    \"producers\": \"Joann Carelli\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1981,\r\n    \"title\": \"The Legend of the Lone Ranger\",\r\n    \"studios\": \"Universal Studios, Associated Film Distribution\",\r\n    \"producers\": \"Walter Coblenz\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1981,\r\n    \"title\": \"Tarzan, the Ape Man\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"John Derek\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1982,\r\n    \"title\": \"Inchon\",\r\n    \"studios\": \"MGM\",\r\n    \"producers\": \"Mitsuharu Ishii\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1982,\r\n    \"title\": \"Annie\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Ray Stark\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1982,\r\n    \"title\": \"Butterfly\",\r\n    \"studios\": \"Analysis Film Releasing\",\r\n    \"producers\": \"Matt Cimber\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1982,\r\n    \"title\": \"Megaforce\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Albert S. Ruddy\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1982,\r\n    \"title\": \"The Pirate Movie\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"David Joseph\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1983,\r\n    \"title\": \"The Lonely Lady\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Robert R. Weston\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1983,\r\n    \"title\": \"Hercules\",\r\n    \"studios\": \"MGM, United Artists, Cannon Films\",\r\n    \"producers\": \"Yoram Globus and Menahem Golan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1983,\r\n    \"title\": \"Jaws 3-D\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Rupert Hitzig\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1983,\r\n    \"title\": \"Stroker Ace\",\r\n    \"studios\": \"Warner Bros., Universal Studios\",\r\n    \"producers\": \"Hank Moonjean\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1983,\r\n    \"title\": \"Two of a Kind\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Roger M. Rothstein and Joe Wizan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1984,\r\n    \"title\": \"Bolero\",\r\n    \"studios\": \"Cannon Films\",\r\n    \"producers\": \"Bo Derek\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1984,\r\n    \"title\": \"Cannonball Run II\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Albert S. Ruddy\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1984,\r\n    \"title\": \"Rhinestone\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Marvin Worth and Howard Smith\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1984,\r\n    \"title\": \"Sheena\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Paul Aratow\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1984,\r\n    \"title\": \"Where the Boys Are '84\",\r\n    \"studios\": \"TriStar Pictures\",\r\n    \"producers\": \"Allan Carr\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1985,\r\n    \"title\": \"Rambo: First Blood Part II\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Buzz Feitshans\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1985,\r\n    \"title\": \"Fever Pitch\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Freddie Fields\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1985,\r\n    \"title\": \"Revolution\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Irwin Winkler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1985,\r\n    \"title\": \"Rocky IV\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Irwin Winkler and Robert Chartoff\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1985,\r\n    \"title\": \"Year of the Dragon\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Dino De Laurentiis\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1986,\r\n    \"title\": \"Howard the Duck\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Gloria Katz\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1986,\r\n    \"title\": \"Under the Cherry Moon\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Bob Cavallo, Joe Ruffalo and Steve Fargnoli\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1986,\r\n    \"title\": \"Blue City\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"William L. Hayward and Walter Hill\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1986,\r\n    \"title\": \"Cobra\",\r\n    \"studios\": \"Warner Bros., Cannon Films\",\r\n    \"producers\": \"Yoram Globus and Menahem Golan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1986,\r\n    \"title\": \"Shanghai Surprise\",\r\n    \"studios\": \"MGM\",\r\n    \"producers\": \"John Kohn\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1987,\r\n    \"title\": \"Leonard Part 6\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Bill Cosby\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1987,\r\n    \"title\": \"Ishtar\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Warren Beatty\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1987,\r\n    \"title\": \"Jaws: The Revenge\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Joseph Sargent\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1987,\r\n    \"title\": \"Tough Guys Don't Dance\",\r\n    \"studios\": \"Cannon Films\",\r\n    \"producers\": \"Yoram Globus and Menahem Golan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1987,\r\n    \"title\": \"Who's That Girl\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Rosilyn Heller and Bernard Williams\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1988,\r\n    \"title\": \"Cocktail\",\r\n    \"studios\": \"Touchstone Pictures\",\r\n    \"producers\": \"Ted Field and Robert W. Cort\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1988,\r\n    \"title\": \"Caddyshack II\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Neil Canton, Jon Peters and Peter Guber\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1988,\r\n    \"title\": \"Hot to Trot\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Steve Tisch\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1988,\r\n    \"title\": \"Mac and Me\",\r\n    \"studios\": \"Orion Pictures\",\r\n    \"producers\": \"R. J. Louis\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1988,\r\n    \"title\": \"Rambo III\",\r\n    \"studios\": \"TriStar Pictures, Carolco Pictures\",\r\n    \"producers\": \"Buzz Feitshans\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1989,\r\n    \"title\": \"Star Trek V: The Final Frontier\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Harve Bennett\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1989,\r\n    \"title\": \"The Karate Kid Part III\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Jerry Weintraub\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1989,\r\n    \"title\": \"Lock Up\",\r\n    \"studios\": \"TriStar Pictures, Carolco Pictures\",\r\n    \"producers\": \"Charles Gordon and Lawrence Gordon\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1989,\r\n    \"title\": \"Road House\",\r\n    \"studios\": \"United Artists\",\r\n    \"producers\": \"Joel Silver\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1989,\r\n    \"title\": \"Speed Zone\",\r\n    \"studios\": \"Orion Pictures\",\r\n    \"producers\": \"Murray Shostack\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1990,\r\n    \"title\": \"The Adventures of Ford Fairlane\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Steven Perry and Joel Silver\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1990,\r\n    \"title\": \"Ghosts Can't Do It\",\r\n    \"studios\": \"Triumph Releasing\",\r\n    \"producers\": \"Bo Derek\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1990,\r\n    \"title\": \"The Bonfire of the Vanities\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Brian De Palma\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1990,\r\n    \"title\": \"Graffiti Bridge\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Randy Phillips and Craig Rice\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1990,\r\n    \"title\": \"Rocky V\",\r\n    \"studios\": \"United Artists\",\r\n    \"producers\": \"Robert Chartoff and Irwin Winkler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1991,\r\n    \"title\": \"Hudson Hawk\",\r\n    \"studios\": \"TriStar Pictures\",\r\n    \"producers\": \"Joel Silver\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1991,\r\n    \"title\": \"Cool as Ice\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Carolyn Pfeiffer and Lionel Wingram\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1991,\r\n    \"title\": \"Dice Rules\",\r\n    \"studios\": \"Seven Arts Productions\",\r\n    \"producers\": \"Loucas George\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1991,\r\n    \"title\": \"Nothing but Trouble\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Lester Berman and Robert K. Weiss\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1991,\r\n    \"title\": \"Return to the Blue Lagoon\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"William A. Graham\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1992,\r\n    \"title\": \"Shining Through\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Carol Baum and Howard Rosenman\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1992,\r\n    \"title\": \"The Bodyguard\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Kevin Costner, Lawrence Kasdan and Jim Wilson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1992,\r\n    \"title\": \"Christopher Columbus: The Discovery\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Alexander Salkind and Ilya Salkind\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1992,\r\n    \"title\": \"Final Analysis\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Paul Junger Witt, Charles Roven and Tony Thomas\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1992,\r\n    \"title\": \"Newsies\",\r\n    \"studios\": \"Walt Disney Pictures\",\r\n    \"producers\": \"Michael Finnell\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1993,\r\n    \"title\": \"Indecent Proposal\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Sherry Lansing\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1993,\r\n    \"title\": \"Body of Evidence\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Dino De Laurentiis\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1993,\r\n    \"title\": \"Cliffhanger\",\r\n    \"studios\": \"TriStar Pictures, Carolco Pictures\",\r\n    \"producers\": \"Renny Harlin and Alan Marshall\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1993,\r\n    \"title\": \"Last Action Hero\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"John McTiernan and Stephen J. Roth\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1993,\r\n    \"title\": \"Sliver\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Robert Evans\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1994,\r\n    \"title\": \"Color of Night\",\r\n    \"studios\": \"Hollywood Pictures\",\r\n    \"producers\": \"Buzz Feitshans and David Matalon\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1994,\r\n    \"title\": \"North\",\r\n    \"studios\": \"Columbia Pictures, Castle Rock Entertainment\",\r\n    \"producers\": \"Rob Reiner and Alan Zweibel\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1994,\r\n    \"title\": \"On Deadly Ground\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"A. Kitman Ho, Julius R. Nasso and Steven Seagal\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1994,\r\n    \"title\": \"The Specialist\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Jerry Weintraub\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1994,\r\n    \"title\": \"Wyatt Earp\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Kevin Costner, Lawrence Kasdan and Jim Wilson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1995,\r\n    \"title\": \"Showgirls\",\r\n    \"studios\": \"MGM, United Artists\",\r\n    \"producers\": \"Charles Evans and Alan Marshall\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1995,\r\n    \"title\": \"Congo\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Kathleen Kennedy and Sam Mercer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1995,\r\n    \"title\": \"It's Pat\",\r\n    \"studios\": \"Touchstone Pictures\",\r\n    \"producers\": \"Charles B. Wessler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1995,\r\n    \"title\": \"The Scarlet Letter\",\r\n    \"studios\": \"Hollywood Pictures\",\r\n    \"producers\": \"Roland Joffé and Andrew G. Vajna\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1995,\r\n    \"title\": \"Waterworld\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Kevin Costner, John Davis, Charles Gordon and Lawrence Gordon\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1996,\r\n    \"title\": \"Striptease\",\r\n    \"studios\": \"Columbia Pictures, Castle Rock Entertainment\",\r\n    \"producers\": \"Andrew Bergman and Mike Lobell\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1996,\r\n    \"title\": \"Barb Wire\",\r\n    \"studios\": \"PolyGram Filmed Entertainment, Gramercy Pictures\",\r\n    \"producers\": \"Todd Moyer, Mike Richardson and Brad Wyman\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1996,\r\n    \"title\": \"Ed\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Rosalie Swedlin\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1996,\r\n    \"title\": \"The Island of Dr. Moreau\",\r\n    \"studios\": \"New Line Cinema\",\r\n    \"producers\": \"Edward R. Pressman\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1996,\r\n    \"title\": \"The Stupids\",\r\n    \"studios\": \"New Line Cinema, Savoy Pictures\",\r\n    \"producers\": \"Leslie Belzberg\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1997,\r\n    \"title\": \"The Postman\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Kevin Costner, Steve Tisch and Jim Wilson\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1997,\r\n    \"title\": \"Anaconda\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Verna Harrah, Carole Little and Leonard Rabinowitz\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1997,\r\n    \"title\": \"Batman & Robin\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Peter MacGregor-Scott\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1997,\r\n    \"title\": \"Fire Down Below\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Julius R. Nasso and Steven Seagal\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1997,\r\n    \"title\": \"Speed 2: Cruise Control\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Jan de Bont, Steve Perry and Michael Peyser\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1998,\r\n    \"title\": \"An Alan Smithee Film: Burn Hollywood Burn\",\r\n    \"studios\": \"Hollywood Pictures\",\r\n    \"producers\": \"Ben Myron and Joe Eszterhas\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1998,\r\n    \"title\": \"Armageddon\",\r\n    \"studios\": \"Touchstone Pictures\",\r\n    \"producers\": \"Michael Bay and Jerry Bruckheimer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1998,\r\n    \"title\": \"The Avengers\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Jerry Weintraub\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1998,\r\n    \"title\": \"Godzilla\",\r\n    \"studios\": \"TriStar Pictures\",\r\n    \"producers\": \"Roland Emmerich and Dean Devlin\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1998,\r\n    \"title\": \"Spice World\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Uri Fruchtan, Mark L. Rosen and Barnaby Thompson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1999,\r\n    \"title\": \"Wild Wild West\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Jon Peters and Barry Sonnenfeld\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 1999,\r\n    \"title\": \"Big Daddy\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Sidney Ganis and Jack Giarraputo\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1999,\r\n    \"title\": \"The Blair Witch Project\",\r\n    \"studios\": \"Artisan Entertainment\",\r\n    \"producers\": \"Robin Cowie and Gregg Hale\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1999,\r\n    \"title\": \"The Haunting\",\r\n    \"studios\": \"DreamWorks\",\r\n    \"producers\": \"Susan Arthur, Donna Roth and Colin Wilson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 1999,\r\n    \"title\": \"Star Wars: Episode I – The Phantom Menace\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Rick McCallum and George Lucas\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2000,\r\n    \"title\": \"Battlefield Earth\",\r\n    \"studios\": \"Warner Bros., Franchise Pictures\",\r\n    \"producers\": \"Jonathan D. Krane, Elie Samaha and John Travolta\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2000,\r\n    \"title\": \"Book of Shadows: Blair Witch 2\",\r\n    \"studios\": \"Artisan Entertainment\",\r\n    \"producers\": \"Bill Carraro\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2000,\r\n    \"title\": \"The Flintstones in Viva Rock Vegas\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Bruce Cohen\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2000,\r\n    \"title\": \"Little Nicky\",\r\n    \"studios\": \"New Line Cinema\",\r\n    \"producers\": \"Jack Giarraputo and Robert Simonds\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2000,\r\n    \"title\": \"The Next Best Thing\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Leslie Dixon, Linne Radmin and Tom Rosenberg\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2001,\r\n    \"title\": \"Freddy Got Fingered\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Larry Brezner, Howard Lapides and Lauren Lloyd\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2001,\r\n    \"title\": \"Driven\",\r\n    \"studios\": \"Warner Bros., Franchise Pictures\",\r\n    \"producers\": \"Renny Harlin, Elie Samaha and Sylvester Stallone\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2001,\r\n    \"title\": \"Glitter\",\r\n    \"studios\": \"20th Century Fox, Columbia Pictures\",\r\n    \"producers\": \"Laurence Mark and E. Bennett Walsh\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2001,\r\n    \"title\": \"Pearl Harbor\",\r\n    \"studios\": \"Touchstone Pictures\",\r\n    \"producers\": \"Michael Bay and Jerry Bruckheimer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2001,\r\n    \"title\": \"3000 Miles to Graceland\",\r\n    \"studios\": \"Warner Bros., Franchise Pictures\",\r\n    \"producers\": \"Demian Lichtenstein, Eric Manes, Elie Samaha, Richard Spero and Andrew Stevens\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2002,\r\n    \"title\": \"Swept Away\",\r\n    \"studios\": \"Screen Gems\",\r\n    \"producers\": \"Matthew Vaughn\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2002,\r\n    \"title\": \"The Adventures of Pluto Nash\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Martin Bregman, Michael Scott Bregman and Louis A. Stroller\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2002,\r\n    \"title\": \"Crossroads\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Ann Carli\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2002,\r\n    \"title\": \"Pinocchio\",\r\n    \"studios\": \"Miramax Films\",\r\n    \"producers\": \"Gianluigi Braschi, Nicoletta Braschi and Elda Ferri\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2002,\r\n    \"title\": \"Star Wars: Episode II – Attack of the Clones\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Rick McCallum and George Lucas\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2003,\r\n    \"title\": \"Gigli\",\r\n    \"studios\": \"Columbia Pictures, Revolution Studios\",\r\n    \"producers\": \"Martin Brest and Casey Silver\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2003,\r\n    \"title\": \"The Cat in the Hat\",\r\n    \"studios\": \"Universal Studios, DreamWorks\",\r\n    \"producers\": \"Brian Grazer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2003,\r\n    \"title\": \"Charlie's Angels: Full Throttle\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Drew Barrymore, Leonard Goldberg and Nancy Juvonen\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2003,\r\n    \"title\": \"From Justin to Kelly\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"John Steven Agoglia\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2003,\r\n    \"title\": \"The Real Cancun\",\r\n    \"studios\": \"New Line Cinema\",\r\n    \"producers\": \"Mary-Ellis Bunim, Jonathan Murray, Jamie Schutz and Rick de Oliveira\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2004,\r\n    \"title\": \"Catwoman\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Denise Di Novi and Edward McDonnell\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2004,\r\n    \"title\": \"Alexander\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Moritz Borman, Jon Kilik, Thomas Schuhly and Iain Smith\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2004,\r\n    \"title\": \"Superbabies: Baby Geniuses 2\",\r\n    \"studios\": \"Triumph Films\",\r\n    \"producers\": \"Steven Paul\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2004,\r\n    \"title\": \"Surviving Christmas\",\r\n    \"studios\": \"DreamWorks\",\r\n    \"producers\": \"Betty Thomas and Jenno Topping\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2004,\r\n    \"title\": \"White Chicks\",\r\n    \"studios\": \"Columbia Pictures, Revolution Studios\",\r\n    \"producers\": \"Rick Alvarez, Lee R. Mayes, Keenen Ivory Wayans, Marlon Wayans and Shawn Wayans\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2005,\r\n    \"title\": \"Dirty Love\",\r\n    \"studios\": \"First Look Pictures\",\r\n    \"producers\": \"John Mallory Asher, BJ Davis, Rod Hamilton, Kimberley Kates, Michael Manasseri, Jenny McCarthy and Trent Walford\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2005,\r\n    \"title\": \"Deuce Bigalow: European Gigolo\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Adam Sandler and Rob Schneider\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2005,\r\n    \"title\": \"The Dukes of Hazzard\",\r\n    \"studios\": \"Warner Bros., Village Roadshow\",\r\n    \"producers\": \"Bill Gerber\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2005,\r\n    \"title\": \"House of Wax\",\r\n    \"studios\": \"Warner Bros., Village Roadshow\",\r\n    \"producers\": \"Susan Levin, Joel Silver and Robert Zemeckis\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2005,\r\n    \"title\": \"Son of the Mask\",\r\n    \"studios\": \"New Line Cinema\",\r\n    \"producers\": \"Erica Huggins and Scott Kroopf\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2006,\r\n    \"title\": \"Basic Instinct 2\",\r\n    \"studios\": \"MGM, C2 Pictures\",\r\n    \"producers\": \"Mario Kassar, Joel B. Michaels and Andrew G. Vajna\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2006,\r\n    \"title\": \"BloodRayne\",\r\n    \"studios\": \"Romar Entertainment\",\r\n    \"producers\": \"Uwe Boll, Dan Clarke and Wolfgang Herrold\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2006,\r\n    \"title\": \"Lady in the Water\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Sam Mercer, Jose L. Rodriguez and M. Night Shyamalan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2006,\r\n    \"title\": \"Little Man\",\r\n    \"studios\": \"Columbia Pictures, Revolution Studios\",\r\n    \"producers\": \"Rick Alvares, Lee Mays, Marlon Wayans and Shawn Wayans\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2006,\r\n    \"title\": \"The Wicker Man\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Nicolas Cage, Randall Emmett, Norm Golightly, Avi Lerner and Joanne Sellar\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2007,\r\n    \"title\": \"I Know Who Killed Me\",\r\n    \"studios\": \"TriStar Pictures\",\r\n    \"producers\": \"David Grace and Frank Mancuso Jr.\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2007,\r\n    \"title\": \"Bratz\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Avi Arad, Isaac Larian and Steven Paul\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2007,\r\n    \"title\": \"Daddy Day Camp\",\r\n    \"studios\": \"TriStar Pictures, Revolution Studios\",\r\n    \"producers\": \"Matt Berenson, John Davis and Wyck Godfrey\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2007,\r\n    \"title\": \"I Now Pronounce You Chuck & Larry\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Adam Sandler and Tom Shadyac\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2007,\r\n    \"title\": \"Norbit\",\r\n    \"studios\": \"DreamWorks\",\r\n    \"producers\": \"John Davis, Eddie Murphy and Michael Tollin\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2008,\r\n    \"title\": \"The Love Guru\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Gary Barber, Michael DeLuca and Mike Myers\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2008,\r\n    \"title\": \"Disaster Movie and Meet the Spartans\",\r\n    \"studios\": \"Lionsgate, 20th Century Fox\",\r\n    \"producers\": \"Jason Friedberg, Peter Safran and Aaron Seltzer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2008,\r\n    \"title\": \"The Happening\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Barry Mendel, Sam Mercer and M. Night Shyamalan\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2008,\r\n    \"title\": \"The Hottie & the Nottie\",\r\n    \"studios\": \"Regent Releasing\",\r\n    \"producers\": \"Hadeel Reda\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2008,\r\n    \"title\": \"In the Name of the King\",\r\n    \"studios\": \"Boll KG, Brightlight Pictures\",\r\n    \"producers\": \"Uwe Boll, Dan Clarke, Wolfgang Herrold and Shawn Williamson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2009,\r\n    \"title\": \"Transformers: Revenge of the Fallen\",\r\n    \"studios\": \"Paramount Pictures, DreamWorks, Hasbro\",\r\n    \"producers\": \"Lorenzo di Bonaventura, Ian Bryce, Tom DeSanto and Don Murphy\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2009,\r\n    \"title\": \"All About Steve\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Sandra Bullock and Mary McLaglen\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2009,\r\n    \"title\": \"G.I. Joe: The Rise of Cobra\",\r\n    \"studios\": \"Paramount Pictures, Hasbro\",\r\n    \"producers\": \"Lorenzo di Bonaventura, Bob Ducsay and Brian Goldner\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2009,\r\n    \"title\": \"Land of the Lost\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Sid and Marty Krofft and Jimmy Miller\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2009,\r\n    \"title\": \"Old Dogs\",\r\n    \"studios\": \"Walt Disney Pictures\",\r\n    \"producers\": \"Peter Abrams, Robert Levy and Andrew Panay\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2010,\r\n    \"title\": \"The Last Airbender\",\r\n    \"studios\": \"Paramount Pictures, Nickelodeon Movies\",\r\n    \"producers\": \"Frank Marshall, Kathleen Kennedy, Sam Mercer and M. Night Shyamalan\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2010,\r\n    \"title\": \"The Bounty Hunter\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Neal H. Moritz\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2010,\r\n    \"title\": \"Sex and the City 2\",\r\n    \"studios\": \"New Line Cinema, HBO Films, Village Roadshow Pictures\",\r\n    \"producers\": \"Michael Patrick King, John Melfi, Sarah Jessica Parker and Darren Star\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2010,\r\n    \"title\": \"The Twilight Saga: Eclipse\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Wyck Godfrey and Karen Rosenfelt\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2010,\r\n    \"title\": \"Vampires Suck\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Jason Friedberg, Peter Safran and Aaron Seltzer\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2011,\r\n    \"title\": \"Jack and Jill\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Todd Garner, Jack Giarraputo and Adam Sandler\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2011,\r\n    \"title\": \"Bucky Larson: Born to Be a Star\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Barry Bernardi, Allen Covert, David Dorfman and Jack Giarraputo\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2011,\r\n    \"title\": \"New Year's Eve\",\r\n    \"studios\": \"Warner Bros., New Line Cinema\",\r\n    \"producers\": \"Mike Karz, Garry Marshall and Wayne Allan Rice\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2011,\r\n    \"title\": \"Transformers: Dark of the Moon\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Lorenzo di Bonaventura, Ian Bryce, Tom DeSanto and Don Murphy\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2011,\r\n    \"title\": \"The Twilight Saga: Breaking Dawn – Part 1\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Wyck Godfrey, Stephenie Meyer and Karen Rosenfelt\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2012,\r\n    \"title\": \"The Twilight Saga: Breaking Dawn – Part 2\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Wyck Godfrey, Stephenie Meyer and Karen Rosenfelt\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2012,\r\n    \"title\": \"Battleship\",\r\n    \"studios\": \"Universal Studios\",\r\n    \"producers\": \"Sarah Aubrey, Peter Berg, Brian Goldner, Duncan Henderson, Bennett Schneir and Scott Stuber\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2012,\r\n    \"title\": \"The Oogieloves in the Big Balloon Adventure\",\r\n    \"studios\": \"Lionsgate Films, Romar Entertainment, Kenn Viselman Presents\",\r\n    \"producers\": \"Gayle Dickie, Kenn Viselman\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2012,\r\n    \"title\": \"That's My Boy\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Allen Covert, Jack Giarraputo, Heather Parry and Adam Sandler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2012,\r\n    \"title\": \"A Thousand Words\",\r\n    \"studios\": \"Paramount Pictures, DreamWorks\",\r\n    \"producers\": \"Nicolas Cage, Alain Chabat, Stephanie Danan, Norman Golightly, Brian Robbinsand Sharla Sumpter Bridgett\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2013,\r\n    \"title\": \"Movie 43\",\r\n    \"studios\": \"Relativity Media\",\r\n    \"producers\": \"Peter Farrelly, Ryan Kavanaugh, John Penotti and Charles B. Wessler\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2013,\r\n    \"title\": \"After Earth\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"James Lassiter, Caleeb Pinkett, Jada Pinkett Smith, M. Night Shyamalan, Will Smith and Jaden Smith\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2013,\r\n    \"title\": \"Grown Ups 2\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Jack Giarraputo and Adam Sandler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2013,\r\n    \"title\": \"The Lone Ranger\",\r\n    \"studios\": \"Walt Disney Pictures\",\r\n    \"producers\": \"Jerry Bruckheimer and Gore Verbinski\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2013,\r\n    \"title\": \"A Madea Christmas\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Ozzie Areu, Matt Moore and Tyler Perry\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2014,\r\n    \"title\": \"Saving Christmas\",\r\n    \"studios\": \"Samuel Goldwyn Films\",\r\n    \"producers\": \"Darren Doane, Raphi Henley, Amanda Rosser and David Shannon\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2014,\r\n    \"title\": \"Left Behind\",\r\n    \"studios\": \"Freestyle Releasing, Entertainment One\",\r\n    \"producers\": \"Michael Walker and Paul LaLonde\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2014,\r\n    \"title\": \"The Legend of Hercules\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Boaz Davidson, Renny Harlin, Danny Lerner and Les Weldon\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2014,\r\n    \"title\": \"Teenage Mutant Ninja Turtles\",\r\n    \"studios\": \"Paramount Pictures, Nickelodeon Movies, Platinum Dunes\",\r\n    \"producers\": \"Michael Bay, Ian Bryce, Andrew Form, Bradley Fuller, Scott Mednick and Galen Walker\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2014,\r\n    \"title\": \"Transformers: Age of Extinction\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Ian Bryce, Tom DeSanto, Lorenzo di Bonaventura and Don Murphy\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2015,\r\n    \"title\": \"Fantastic Four\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2015,\r\n    \"title\": \"Fifty Shades of Grey\",\r\n    \"studios\": \"Universal Pictures, Focus Features\",\r\n    \"producers\": \"Michael De Luca, Dana Brunetti and E. L. James\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2015,\r\n    \"title\": \"Jupiter Ascending\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Grant Hill and The Wachowskis\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2015,\r\n    \"title\": \"Paul Blart: Mall Cop 2\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Todd Garner, Kevin James and Adam Sandler\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2015,\r\n    \"title\": \"Pixels\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Adam Sandler, Chris Columbus, Mark Radcliffe and Allen Covert\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Hillary's America: The Secret History of the Democratic Party\",\r\n    \"studios\": \"Quality Flix\",\r\n    \"producers\": \"Gerald R. Molen\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Batman v Superman: Dawn of Justice\",\r\n    \"studios\": \"Warner Bros.\",\r\n    \"producers\": \"Charles Roven and Deborah Snyder\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Dirty Grandpa\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Bill Block, Michael Simkin, Jason Barrett and Barry Josephson\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Gods of Egypt\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Basil Iwanyk and Alex Proyas\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Independence Day: Resurgence\",\r\n    \"studios\": \"20th Century Fox\",\r\n    \"producers\": \"Dean Devlin, Harald Kloser and Roland Emmerich\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2016,\r\n    \"title\": \"Zoolander 2\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Stuart Cornfeld, Scott Rudin, Ben Stiller and Clayton Townsend\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2017,\r\n    \"title\": \"The Emoji Movie\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Michelle Raimo Kouyate\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2017,\r\n    \"title\": \"Baywatch\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Ivan Reitman, Michael Berk, Douglas Schwartz, Gregory J. Bonann and Beau Flynn\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2017,\r\n    \"title\": \"Fifty Shades Darker\",\r\n    \"studios\": \"Universal Pictures\",\r\n    \"producers\": \"Michael De Luca, E. L. James, Dana Brunetti and Marcus Viscidi\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2017,\r\n    \"title\": \"The Mummy\",\r\n    \"studios\": \"Universal Pictures\",\r\n    \"producers\": \"Alex Kurtzman, Chris Morgan, Sean Daniel and Sarah Bradshaw\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2017,\r\n    \"title\": \"Transformers: The Last Knight\",\r\n    \"studios\": \"Paramount Pictures\",\r\n    \"producers\": \"Don Murphy, Tom DeSanto, Lorenzo di Bonaventura and Ian Bryce\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2018,\r\n    \"title\": \"Holmes & Watson\",\r\n    \"studios\": \"Columbia Pictures\",\r\n    \"producers\": \"Will Ferrell, Adam McKay, Jimmy Miller and Clayton Townsend\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2018,\r\n    \"title\": \"Gotti\",\r\n    \"studios\": \"Vertical Entertainment\",\r\n    \"producers\": \"Randall Emmett, Marc Fiore, Michael Froch and George Furla\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2018,\r\n    \"title\": \"The Happytime Murders\",\r\n    \"studios\": \"STX\",\r\n    \"producers\": \"Ben Falcone, Jeffrey Hayes, Brian Henson and Melissa McCarthy\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2018,\r\n    \"title\": \"Robin Hood\",\r\n    \"studios\": \"Summit Entertainment\",\r\n    \"producers\": \"Jennifer Davisson and Leonardo DiCaprio\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2018,\r\n    \"title\": \"Winchester\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Tim McGahan and Brett Tomberlin\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2019,\r\n    \"title\": \"Cats\",\r\n    \"studios\": \"Universal Pictures\",\r\n    \"producers\": \"Debra Hayward, Tim Bevan, Eric Fellner, and Tom Hooper\",\r\n    \"winner\": \"yes\"\r\n  },\r\n  {\r\n    \"year\": 2019,\r\n    \"title\": \"The Fanatic\",\r\n    \"studios\": \"Quiver Distribution\",\r\n    \"producers\": \"Daniel Grodnik, Oscar Generale, and Bill Kenwright\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2019,\r\n    \"title\": \"The Haunting of Sharon Tate\",\r\n    \"studios\": \"Saban Films\",\r\n    \"producers\": \"Lucas Jarach, Daniel Farrands, and Eric Brenner\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2019,\r\n    \"title\": \"A Madea Family Funeral\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Ozzie Areu, Will Areu, and Mark E. Swinton\",\r\n    \"winner\": \"\"\r\n  },\r\n  {\r\n    \"year\": 2019,\r\n    \"title\": \"Rambo: Last Blood\",\r\n    \"studios\": \"Lionsgate\",\r\n    \"producers\": \"Avi Lerner, Kevin King Templeton, Yariv Lerner, and Les Weldon\",\r\n    \"winner\": \"\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies/bulk",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMovieById",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "symbol",
+						"value": "ETH",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/movies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

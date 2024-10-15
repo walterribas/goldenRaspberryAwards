@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="090e8911-be75-47b8-9c3f-dd75f631e8c0" name="Changes" comment="fase 1 getProducersWithAwardsInterval">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/outsera/dto/AwardInterval.java" afterDir="false" />
+    <list default="true" id="090e8911-be75-47b8-9c3f-dd75f631e8c0" name="Changes" comment="creating separate DTO class&#10;adjust to get the first and last movie directly. Instead of using a loop">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/outsera.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/outsera/controller/MovieControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/outsera/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outsera/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/outsera/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outsera/model/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/outsera/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/outsera/service/MovieService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +52,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GoldenRaspberryAwardsApp.executor": "Run",
+    "JUnit.MovieControllerTest.executor": "Run",
+    "JUnit.MovieControllerTest.shouldDeleteMovie.executor": "Run",
+    "JUnit.MovieControllerTest.shouldLoadMoviesFromCSV.executor": "Run",
+    "JUnit.MovieControllerTest.shouldReturnAllMovies.executor": "Debug",
+    "JUnit.MovieControllerTest.shouldReturnProducersInterval.executor": "Run",
+    "JUnit.MovieControllerTest.shouldReturnWinners.executor": "Run",
+    "JUnit.MovieControllerTest.shouldSaveNewMovie.executor": "Run",
     "Maven.golden-raspberry-awards [clean].executor": "Run",
     "Maven.golden-raspberry-awards [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -55,20 +66,21 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/walte/IdeaProjects/GoldenRaspberryAwards/src/main/resources",
+    "last_opened_file_path": "C:/Users/walte/IdeaProjects/GoldenRaspberryAwards",
     "onboarding.tips.debug.path": "C:/Users/walte/IdeaProjects/GoldenRaspberryAwards/src/main/java/com/outsera/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "RainbowCSV.Settings"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\walte\IdeaProjects\GoldenRaspberryAwards" />
       <recent name="C:\Users\walte\IdeaProjects\GoldenRaspberryAwards\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GoldenRaspberryAwardsApp">
     <configuration name="GoldenRaspberryAwardsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.outsera.GoldenRaspberryAwardsApp" />
       <module name="golden-raspberry-awards" />
@@ -82,6 +94,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MovieControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="golden-raspberry-awards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.outsera.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.outsera.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.outsera.controller.MovieControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieControllerTest.shouldReturnAllMovies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="golden-raspberry-awards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.outsera.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.outsera.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.outsera.controller.MovieControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturnAllMovies" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieControllerTest.shouldReturnProducersInterval" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="golden-raspberry-awards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.outsera.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.outsera.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.outsera.controller.MovieControllerTest" />
+      <option name="METHOD_NAME" value="shouldReturnProducersInterval" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieControllerTest.shouldSaveNewMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="golden-raspberry-awards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.outsera.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.outsera.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.outsera.controller.MovieControllerTest" />
+      <option name="METHOD_NAME" value="shouldSaveNewMovie" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="GoldenRaspberryAwards" />
       <method v="2">
@@ -90,7 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovieControllerTest" />
+        <item itemvalue="JUnit.MovieControllerTest.shouldSaveNewMovie" />
         <item itemvalue="Application.GoldenRaspberryAwardsApp" />
+        <item itemvalue="JUnit.MovieControllerTest.shouldReturnAllMovies" />
+        <item itemvalue="JUnit.MovieControllerTest.shouldReturnProducersInterval" />
       </list>
     </recent_temporary>
   </component>
@@ -119,12 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1728937357154</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="creating separate DTO class&#10;adjust to get the first and last movie directly. Instead of using a loop">
+      <option name="closed" value="true" />
+      <created>1728941316320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728941316320</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="fase 1 getProducersWithAwardsInterval" />
-    <option name="LAST_COMMIT_MESSAGE" value="fase 1 getProducersWithAwardsInterval" />
+    <MESSAGE value="creating separate DTO class&#10;adjust to get the first and last movie directly. Instead of using a loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating separate DTO class&#10;adjust to get the first and last movie directly. Instead of using a loop" />
   </component>
 </project>
