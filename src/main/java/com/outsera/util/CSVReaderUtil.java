@@ -21,6 +21,16 @@ public class CSVReaderUtil {
 
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(";");
+                //Verifica se a linha tem o número correto de campos obrigatórios
+                if (fields.length < 4) {
+                    throw new IllegalArgumentException("Campos obrigatórios não podem ser nulos ou vazios. Linha: " + line);
+                }
+                //Verifica se os campos obrigatórios estão nulos ou vazios exceto o campo 'winner'
+                for (int i = 0; i < 4; i++) {
+                    if (isNullOrEmpty(fields[i])) {
+                        throw new IllegalArgumentException("Campos obrigatórios não podem ser nulos ou vazios. Linha: " + line);
+                    }
+                }
                 Movie movie = new Movie();
                 movie.setReleaseYear(Integer.parseInt(fields[0]));
                 movie.setTitle(fields[1]);
@@ -33,7 +43,12 @@ public class CSVReaderUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("Erro ao ler o arquivo CSV.", e);
         }
         return movies;
+    }
+
+    private boolean isNullOrEmpty(String str) {
+        return str == null || str.trim().isEmpty();
     }
 }

@@ -77,8 +77,10 @@ public class MovieService {
                         .map(producer -> new AbstractMap.SimpleEntry<>(producer, movie)))
                 .collect(Collectors.groupingBy(Map.Entry::getKey, Collectors.mapping(Map.Entry::getValue, Collectors.toList())));
 
-        AwardInterval minIntervalProducer = null;
-        AwardInterval maxIntervalProducer = null;
+        List<AwardInterval> minIntervalProducers = new ArrayList<>();
+        List<AwardInterval> maxIntervalProducers = new ArrayList<>();
+        Integer minInterval = null;
+        Integer maxInterval = null;
 
         for (Map.Entry<String, List<Movie>> entry : moviesByProducer.entrySet()) {
             String producer = entry.getKey();
@@ -94,20 +96,30 @@ public class MovieService {
                     int lastWinDate = producerMovies.get(i).getReleaseYear();
                     String lastWinMovie = producerMovies.get(i).getTitle();
 
-                    if (minIntervalProducer == null || interval < minIntervalProducer.interval()) {
-                        minIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                    AwardInterval currentInterval = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+
+                    if (minInterval == null || interval < minInterval) {
+                        minInterval = interval;
+                        minIntervalProducers.clear();
+                        minIntervalProducers.add(currentInterval);
+                    } else if (interval == minInterval) {
+                        minIntervalProducers.add(currentInterval);
                     }
 
-                    if (maxIntervalProducer == null || interval > maxIntervalProducer.interval()) {
-                        maxIntervalProducer = new AwardInterval(producer, interval, firstWinDate, firstWinMovie, lastWinDate, lastWinMovie);
+                    if (maxInterval == null || interval > maxInterval) {
+                        maxInterval = interval;
+                        maxIntervalProducers.clear();
+                        maxIntervalProducers.add(currentInterval);
+                    } else if (interval == maxInterval) {
+                        maxIntervalProducers.add(currentInterval);
                     }
                 }
             }
         }
 
         Map<String, Object> result = new HashMap<>();
-        result.put("min", minIntervalProducer);
-        result.put("max", maxIntervalProducer);
+        result.put("min", minIntervalProducers);
+        result.put("max", maxIntervalProducers);
 
         return result;
     }

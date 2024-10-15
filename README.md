@@ -52,7 +52,60 @@ Este projeto implementa uma API RESTful para possibilitar a leitura da lista de 
 
 4. Acesse a API:
 - **A API estará disponível em http://localhost:8080.**
-- **Utilize a coleção Postman incluída na pasta `resources` para testar as endpoints**
+- **Listar todos os filmes**:
+  - Para listar todos os filmes inseridos ao iniciar a API, acesse:
+  ```http
+  GET http://localhost:8080/movies
+
+- **Resposta Exemplo**:
+   ```json lines
+  [
+    {
+        "id": 1,
+        "year": 1980,
+        "title": "Can't Stop the Music",
+        "studios": "Associated Film Distribution",
+        "producers": "Allan Carr",
+        "winner": true
+    },
+  ...
+   ]
+
+- **Obter Intervalo dos Produtores**:
+   - Para testar os requisitos da API, acesse:
+   ```http
+   GET http://localhost:8080/movies/producers-interval
+
+- **Resposta Exemplo**:
+   ```json lines
+  {
+    "min": [
+        {
+            "producer": "Joel Silver",
+            "interval": 1,
+            "firstWinData": 1990,
+            "firstWinMovie": "The Adventures of Ford Fairlane",
+            "lastWinData": 1991,
+            "lastWinMovie": "Hudson Hawk"
+        }
+    ],
+    "max": [
+        {
+            "producer": "Matthew Vaughn",
+            "interval": 13,
+            "firstWinData": 2002,
+            "firstWinMovie": "Swept Away",
+            "lastWinData": 2015,
+            "lastWinMovie": "Fantastic Four"
+        }
+    ]
+   }
+
+- **Coleção Postman**:
+- **Utilize a coleção Postman incluída na pasta `resources/` para testar todos os endpoints.**
+  1. Abra o Postman.
+  2. Clique em "Import".
+  3. Selecione a coleção `outsera.postman_collection.json`na pasta `resources`.
 
 ## Testes de Integração
 Os testes de integração foram implementados na classe `MovieControllerTest`. Para executá-los, utilize o seguinte comando:
